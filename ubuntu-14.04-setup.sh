@@ -10,6 +10,8 @@ cd nginx-1.7.7
 ./configure --with-http_ssl_module --add-module=../nginx-rtmp-module-master
 make
 make install
+wget -O cfgpatch.txt 'http://quinnebert.net/oss/setuputils/nginx-http-port-autoswap.php.txt'
+cat cfgpatch.txt | php
 echo 'rtmp {
   server {
     listen 1935;
