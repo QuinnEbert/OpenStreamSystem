@@ -11,14 +11,19 @@ cd nginx-1.7.7
 make
 make install
 echo 'rtmp {
-        server {
-                listen 1935;
-                chunk_size 4096;
-
-                application live {
-                        live on;
-                        record off;
-                }
-        }
+  server {
+    listen 1935;
+    chunk_size 4096;
+    application live {
+      live on;
+      record all;
+      record_path /tmp/av;
+    }
+    application play {
+      play /tmp/av;
+    }
+  }
 }' >> '/usr/local/nginx/conf/nginx.conf'
 /usr/local/nginx/sbin/nginx
+mkdir -p /tmp/av
+chmod 0777 /tmp/av
