@@ -20,6 +20,7 @@ echo 'rtmp {
       live on;
       record all;
       record_path /tmp/av;
+      record_unique on;
     }
     application play {
       play /tmp/av;
