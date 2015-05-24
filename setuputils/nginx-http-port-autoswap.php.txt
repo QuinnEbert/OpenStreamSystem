@@ -1,0 +1,1 @@
+<?php $cfg = file_get_contents('/usr/local/nginx/conf/nginx.conf'); file_put_contents('/usr/local/nginx/conf/nginx.conf',str_replace('80;','8080;',$cfg));
