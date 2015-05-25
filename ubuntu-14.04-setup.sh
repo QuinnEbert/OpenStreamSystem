@@ -30,3 +30,7 @@ echo 'rtmp {
 /usr/local/nginx/sbin/nginx
 mkdir -p /tmp/av
 chmod 0777 /tmp/av
+rm -f /var/www/html/index.html
+echo '<?php header("Location: /oss/");' > /var/www/html/index.php
+cd /var/www/html
+git clone 'https://github.com/QuinnEbert/OpenStreamSystem.git' 'oss'
